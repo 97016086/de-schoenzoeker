@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../images/Schoen(4).svg";
+import Links from "../components/links";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
@@ -14,7 +15,7 @@ const Navbar = () => {
   // Array containing navigation items
   const navItems = [
     { id: 1, text: "Home" },
-    { id: 2, text: "Uitleg Wijdtematen" },
+    { id: 2, text: "over ons" },
     { id: 3, text: "Schoen soort" },
     { id: 4, text: "De Schoenzoeker" },
     { id: 5, text: "Contact" },
@@ -29,17 +30,7 @@ const Navbar = () => {
         className="cursor-pointer	h-40"
       />
 
-      {/* Desktop Navigation */}
-      <ul className="hidden md:flex">
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="p-4 hover:bg-[#91ca6b] rounded-xl m-2 cursor-pointer duration-300 hover:text-white"
-          >
-            {item.text}
-          </li>
-        ))}
-      </ul>
+      <Links isFooter={false} />
 
       {/* Mobile Navigation Icon */}
       <div onClick={handleNav} className="block md:hidden">
