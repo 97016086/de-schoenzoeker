@@ -1,14 +1,14 @@
 import React from "react";
 
-const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
+const ShoeSizeFilter = ({ selectedSizes, handleSizeChange }) => {
   return (
-    <div>
+    <div className="flex flex-col">
       <h3>Schoenmaat</h3>
       <label>
         <input
           type="checkbox"
           value="36"
-          checked={SelectedSizes.includes("36")}
+          checked={selectedSizes.includes("36")}
           onChange={handleSizeChange}
         />
         36
@@ -17,7 +17,7 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
         <input
           type="checkbox"
           value="37"
-          checked={SelectedSizes.includes("37")}
+          checked={selectedSizes.includes("37")}
           onChange={handleSizeChange}
         />
         37
@@ -26,7 +26,7 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
         <input
           type="checkbox"
           value="38"
-          checked={SelectedSizes.includes("38")}
+          checked={selectedSizes.includes("38")}
           onChange={handleSizeChange}
         />
         38
@@ -35,7 +35,7 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
         <input
           type="checkbox"
           value="39"
-          checked={SelectedSizes.includes("39")}
+          checked={selectedSizes.includes("39")}
           onChange={handleSizeChange}
         />
         39
@@ -44,7 +44,7 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
         <input
           type="checkbox"
           value="40"
-          checked={SelectedSizes.includes("40")}
+          checked={selectedSizes.includes("40")}
           onChange={handleSizeChange}
         />
         40
@@ -53,7 +53,7 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
         <input
           type="checkbox"
           value="41"
-          checked={SelectedSizes.includes("41")}
+          checked={selectedSizes.includes("41")}
           onChange={handleSizeChange}
         />
         41
@@ -62,7 +62,7 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
         <input
           type="checkbox"
           value="42"
-          checked={SelectedSizes.includes("42")}
+          checked={selectedSizes.includes("42")}
           onChange={handleSizeChange}
         />
         42
@@ -70,8 +70,8 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
       <label>
         <input
           type="checkbox"
-          value="42"
-          checked={SelectedSizes.includes("42")}
+          value="43"
+          checked={selectedSizes.includes("43")}
           onChange={handleSizeChange}
         />
         43
@@ -80,7 +80,7 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
         <input
           type="checkbox"
           value="44"
-          checked={SelectedSizes.includes("44")}
+          checked={selectedSizes.includes("44")}
           onChange={handleSizeChange}
         />
         44
@@ -89,7 +89,7 @@ const ShoeSizeFilter = ({ SelectedSizes, handleSizeChange }) => {
         <input
           type="checkbox"
           value="45"
-          checked={SelectedSizes.includes("45")}
+          checked={selectedSizes.includes("45")}
           onChange={handleSizeChange}
         />
         45

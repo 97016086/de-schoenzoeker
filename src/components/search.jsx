@@ -4,14 +4,14 @@ import axios from "axios";
 const GoogleSearchComponent = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
-  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
-  const searchEngineId = process.env.REACT_APP_SEARCH_ENGINE_ID;
+  const apiKey = "YOUR_GOOGLE_API_KEY";
+  const searchEngineId = "YOUR_CUSTOM_SEARCH_ENGINE_ID";
 
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.get(
-        "https://customsearch.googleapis.com/customsearch/v1",
+        "https://www.googleapis.com/customsearch/v1",
         {
           params: {
             key: apiKey,
@@ -22,19 +22,7 @@ const GoogleSearchComponent = () => {
       );
       setResults(response.data.items || []); // Results from Google Custom Search API
     } catch (error) {
-      if (error.response) {
-        // Server responded with a status other than 200 range
-        console.error("Error response data:", error.response.data);
-        console.error("Error status:", error.response.status);
-        console.error("Error headers:", error.response.headers);
-        console.error("Full error response:", error.response.data);
-      } else if (error.request) {
-        // No response was received
-        console.error("Error request:", error.request);
-      } else {
-        // Something happened in setting up the request
-        console.error("Error message:", error.message);
-      }
+      console.error("Error fetching search results:", error);
     }
   };
 
