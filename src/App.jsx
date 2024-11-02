@@ -1,6 +1,7 @@
 import React from "react";
-import Home from "../src/pages/homepage";
-import OverOns from "../src/pages/over ons";
+import Home from "./pages/homepage";
+import OverOns from "./pages/over ons";
+import Schoenzoeker from "./pages/schoenzoeker";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Over-ons" element={<OverOns />} />
+          <Route path="/De-SchoenZoeker" element={<Schoenzoeker />} />
         </Routes>
       </div>
     </Router>

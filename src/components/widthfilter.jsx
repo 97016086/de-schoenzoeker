@@ -1,0 +1,83 @@
+import React from "react";
+
+const WidthFilter = ({ selectedWidths, handleWidthChange }) => {
+  return (
+    <div className="flex flex-col">
+      <h3>Wijdte</h3>
+      <label>
+        <input
+          type="checkbox"
+          value="C"
+          checked={selectedWidths.includes("C")}
+          onChange={handleWidthChange}
+        />
+        C
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="D"
+          checked={selectedWidths.includes("D")}
+          onChange={handleWidthChange}
+        />
+        D
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="E"
+          checked={selectedWidths.includes("E")}
+          onChange={handleWidthChange}
+        />
+        E
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="F"
+          checked={selectedWidths.includes("F")}
+          onChange={handleWidthChange}
+        />
+        F
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="G"
+          checked={selectedWidths.includes("G")}
+          onChange={handleWidthChange}
+        />
+        G
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="H"
+          checked={selectedWidths.includes("H")}
+          onChange={handleWidthChange}
+        />
+        H
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="J"
+          checked={selectedWidths.includes("J")}
+          onChange={handleWidthChange}
+        />
+        J
+      </label>
+      <label>
+        <input
+          type="checkbox"
+          value="K"
+          checked={selectedWidths.includes("K")}
+          onChange={handleWidthChange}
+        />
+        K
+      </label>
+    </div>
+  );
+};
+
+export default WidthFilter;
