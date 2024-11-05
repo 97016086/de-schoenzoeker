@@ -1,35 +1,46 @@
 import React from "react";
 
-const ColorFilter = ({ selectedColors, handleColorChange }) => {
+const ColorFilter = ({ toggleFilter, colors, setColors }) => {
   return (
     <div className="flex flex-col">
-      <h3>Select Colors:</h3>
+      <h3>Kleur:</h3>
       <label>
         <input
           type="checkbox"
           value="black"
-          checked={selectedColors.includes("black")}
-          onChange={handleColorChange}
+          checked={colors.includes("black")}
+          onChange={() => toggleFilter(colors, setColors, "black")}
         />
-        Black
+        Zwart
       </label>
+      <label>
+        <input
+          type="checkbox"
+          value="white"
+          checked={colors.includes("white")}
+          onChange={() => toggleFilter(colors, setColors, "white")}
+        />
+        Wit
+      </label>
+
       <label>
         <input
           type="checkbox"
           value="brown"
-          checked={selectedColors.includes("brown")}
-          onChange={handleColorChange}
+          checked={colors.includes("brown")}
+          onChange={() => toggleFilter(colors, setColors, "brown")}
         />
-        Brown
+        Bruin
       </label>
+
       <label>
         <input
           type="checkbox"
           value="multi"
-          checked={selectedColors.includes("multi")}
-          onChange={handleColorChange}
+          checked={colors.includes("multi")}
+          onChange={() => toggleFilter(colors, setColors, "multi")}
         />
-        Multiple Colors
+        Diverse Kleuren
       </label>
     </div>
   );
