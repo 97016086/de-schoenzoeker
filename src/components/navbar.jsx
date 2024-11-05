@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Logo from "../images/Schoen(4).svg";
-import Links from "../components/links";
+import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { Route } from "react-router-dom";
 
 const Navbar = () => {
   // State to manage the navbar's visibility
@@ -12,57 +13,88 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  // Array containing navigation items
-  const navItems = [
-    { id: 1, text: "Home" },
-    { id: 2, text: "over ons" },
-    { id: 3, text: "Schoen soort" },
-    { id: 4, text: "De Schoenzoeker" },
-    { id: 5, text: "Contact" },
-  ];
-
   return (
-    <div className="bg-[#A6D4C9] flex justify-between items-center h-20 mx-auto px-4 text-[#050316]">
-      {/* Logo */}
-      <img
-        src={Logo}
-        alt="de schoenzoeker voor alle andere wijdtematen"
-        className="cursor-pointer	h-40"
-      />
-
-      <Links isFooter={false} />
-
-      {/* Mobile Navigation Icon */}
-      <div onClick={handleNav} className="block md:hidden">
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      <ul
-        className={
-          nav
-            ? "fixed md:hidden left-0 top-0 w-[60%] h-full  bg-[#A6D4C9] ease-in-out duration-500"
-            : "ease-in-out w-[60%] duration-500 fixed top-0 bottom-0 left-[-100%]"
-        }
-      >
-        {/* Mobile Logo */}
+    <>
+      <nav className="bg-[#A6D4C9] flex justify-between items-center h-20 mx-auto px-4 text-[#050316]">
+        {/* Logo */}
         <img
           src={Logo}
           alt="de schoenzoeker voor alle andere wijdtematen"
-          className="cursor-pointer	h-28"
+          className="cursor-pointer h-16"
         />
 
-        {/* Mobile Navigation Items */}
-        {navItems.map((item) => (
-          <li
-            key={item.id}
-            className="m-2 p-3 rounded hover:bg-[#91ca6b] duration-300 hover:text-white cursor-pointer border-[#91ca6b]"
-          >
-            {item.text}
+        {/* Desktop Navigation (hidden on small screens) */}
+        <ul className="hidden md:flex space-x-6">
+          <li className="hover:bg-[#91ca6b] p-2 rounded active:bg-[#91ca6b]">
+            <Link to="/">Homepage</Link>
           </li>
-        ))}
-      </ul>
-    </div>
+          <li className="hover:bg-[#91ca6b] p-2 rounded active:bg-[#91ca6b]">
+            <Link to="/over-ons">Over Ons</Link>
+          </li>
+          <li className="hover:bg-[#91ca6b] p-2 rounded">
+            <Link to="/wijdtematen">Wijdtematen</Link>
+          </li>
+          <li className="hover:bg-[#91ca6b] p-2 rounded">
+            <Link to="/schoen-soort">Schoen soort</Link>
+          </li>
+          <li className="hover:bg-[#91ca6b] p-2 rounded">
+            <Link to="/de-schoenzoeker">De Schoenzoeker</Link>
+          </li>
+        </ul>
+
+        {/* Mobile Navigation Icon (only visible on small screens) */}
+        <div onClick={handleNav} className="md:hidden cursor-pointer">
+          {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        <div
+          className={
+            nav
+              ? "fixed md:hidden left-0 top-0 w-[60%] h-full bg-[#A6D4C9] ease-in-out duration-500"
+              : "fixed top-0 left-[-100%] w-[60%] h-full ease-in-out duration-500"
+          }
+        >
+          {/* Mobile Logo */}
+          <div className="p-4">
+            <img
+              src={Logo}
+              alt="de schoenzoeker voor alle andere wijdtematen"
+              className="cursor-pointer h-16"
+            />
+          </div>
+
+          {/* Mobile Navigation Items */}
+          <ul className="flex flex-col space-y-4 p-4">
+            <li className="hover:bg-[#91ca6b] p-2 rounded active:bg-[#91ca6b]">
+              <Link to="/" onClick={handleNav}>
+                Homepage
+              </Link>
+            </li>
+            <li className="hover:bg-[#91ca6b] p-2 rounded active:bg-[#91ca6b]">
+              <Link to="/over-ons" onClick={handleNav}>
+                Over Ons
+              </Link>
+            </li>
+            <li className="hover:bg-[#91ca6b] p-2 rounded">
+              <Link to="/wijdtematen" onClick={handleNav}>
+                Wijdtematen
+              </Link>
+            </li>
+            <li className="hover:bg-[#91ca6b] p-2 rounded">
+              <Link to="/schoen-soort" onClick={handleNav}>
+                Schoen soort
+              </Link>
+            </li>
+            <li className="hover:bg-[#91ca6b] p-2 rounded">
+              <Link to="/de-schoenzoeker" onClick={handleNav}>
+                De Schoenzoeker
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </>
   );
 };
 
