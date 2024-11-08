@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Logo from "../images/Schoen(4).svg";
 import { Link } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Route } from "react-router-dom";
 
 const Navbar = () => {
   // State to manage the navbar's visibility
@@ -20,30 +19,30 @@ const Navbar = () => {
         <img
           src={Logo}
           alt="de schoenzoeker voor alle andere wijdtematen"
-          className="cursor-pointer h-16"
+          className="mt-10 h-40 "
         />
 
         {/* Desktop Navigation (hidden on small screens) */}
-        <ul className="hidden md:flex space-x-6">
-          <li className="hover:bg-[#91ca6b] p-2 rounded active:bg-[#91ca6b]">
+        <ul className="hidden lg:flex space-x-6">
+          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display active:bg-[#91ca6b]">
             <Link to="/">Homepage</Link>
           </li>
-          <li className="hover:bg-[#91ca6b] p-2 rounded active:bg-[#91ca6b]">
+          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display active:bg-[#91ca6b]">
             <Link to="/over-ons">Over Ons</Link>
           </li>
-          <li className="hover:bg-[#91ca6b] p-2 rounded">
+          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
             <Link to="/wijdtematen">Wijdtematen</Link>
           </li>
-          <li className="hover:bg-[#91ca6b] p-2 rounded">
+          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
             <Link to="/schoen-soort">Schoen soort</Link>
           </li>
-          <li className="hover:bg-[#91ca6b] p-2 rounded">
+          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
             <Link to="/de-schoenzoeker">De Schoenzoeker</Link>
           </li>
         </ul>
 
         {/* Mobile Navigation Icon (only visible on small screens) */}
-        <div onClick={handleNav} className="md:hidden cursor-pointer">
+        <div onClick={handleNav} className="lg:hidden cursor-pointer">
           {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
         </div>
 
@@ -51,7 +50,7 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? "fixed md:hidden left-0 top-0 w-[60%] h-full bg-[#A6D4C9] ease-in-out duration-500"
+              ? "fixed	lg:hidden left-0 top-0 w-[60%] h-full bg-[#A6D4C9] ease-in-out duration-500"
               : "fixed top-0 left-[-100%] w-[60%] h-full ease-in-out duration-500"
           }
         >
@@ -60,33 +59,33 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="de schoenzoeker voor alle andere wijdtematen"
-              className="cursor-pointer h-16"
+              className="cursor-pointer h-16 "
             />
           </div>
 
           {/* Mobile Navigation Items */}
           <ul className="flex flex-col space-y-4 p-4">
-            <li className="hover:bg-[#91ca6b] p-2 rounded active:bg-[#91ca6b]">
+            <li className="hover:bg-[#91ca6b] p-2 rounded	font-display active:bg-[#91ca6b]">
               <Link to="/" onClick={handleNav}>
                 Homepage
               </Link>
             </li>
-            <li className="hover:bg-[#91ca6b] p-2 rounded active:bg-[#91ca6b]">
+            <li className="hover:bg-[#91ca6b] p-2 rounded	font-display active:bg-[#91ca6b]">
               <Link to="/over-ons" onClick={handleNav}>
                 Over Ons
               </Link>
             </li>
-            <li className="hover:bg-[#91ca6b] p-2 rounded">
+            <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
               <Link to="/wijdtematen" onClick={handleNav}>
                 Wijdtematen
               </Link>
             </li>
-            <li className="hover:bg-[#91ca6b] p-2 rounded">
+            <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
               <Link to="/schoen-soort" onClick={handleNav}>
                 Schoen soort
               </Link>
             </li>
-            <li className="hover:bg-[#91ca6b] p-2 rounded">
+            <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
               <Link to="/de-schoenzoeker" onClick={handleNav}>
                 De Schoenzoeker
               </Link>
