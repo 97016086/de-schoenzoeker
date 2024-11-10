@@ -25,9 +25,6 @@ function Footer() {
             <Link to="/wijdtematen">Wijdtematen</Link>
           </li>
           <li className="hover:bg-[#91ca6b]	font-display	text-sm p-2 rounded">
-            <Link to="/schoen-soort">Schoen soort</Link>
-          </li>
-          <li className="hover:bg-[#91ca6b]	font-display	text-sm p-2 rounded">
             <Link to="/de-schoenzoeker">De Schoenzoeker</Link>
           </li>
         </ul>

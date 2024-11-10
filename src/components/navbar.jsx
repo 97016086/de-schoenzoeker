@@ -34,9 +34,6 @@ const Navbar = () => {
             <Link to="/wijdtematen">Wijdtematen</Link>
           </li>
           <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
-            <Link to="/schoen-soort">Schoen soort</Link>
-          </li>
-          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
             <Link to="/de-schoenzoeker">De Schoenzoeker</Link>
           </li>
         </ul>

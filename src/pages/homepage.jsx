@@ -5,9 +5,9 @@ import Footer from "../components/footer";
 
 function Home() {
   return (
-    <div className="bg-[#fafcf8]">
+    <div className="bg-[#f3f7f0]">
       <NavBar />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen ">
         <Hero />
         <Footer />
       </div>
