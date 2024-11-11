@@ -22,8 +22,7 @@ const BrandFilter = ({ toggleFilter, brands, setBrands }) => {
     { value: "vanbommel", label: "Van Bommel" },
     { value: "verschuren", label: "Verschuren" },
     { value: "waldläufer", label: "Waldläufer" },
-    { value: "xsensible stretchwalker", label: "Ara" },
-    { value: "ara", label: " Xsensible Stretchwalker" },
+    { value: "xsensible stretchwalker", label: "Xsensible Stretchwalker" },
   ];
   return (
     <div className=" flex	flex-col mx-8">
