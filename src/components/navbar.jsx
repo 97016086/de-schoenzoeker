@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../images/Schoen(4).svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
@@ -21,28 +21,56 @@ const Navbar = () => {
           alt="de schoenzoeker voor alle andere wijdtematen"
           className="mt-10 h-40 "
         />
-
         {/* Desktop Navigation (hidden on small screens) */}
         <ul className="hidden lg:flex space-x-6">
-          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display active:bg-[#91ca6b]">
-            <Link to="/">Homepage</Link>
-          </li>
-          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display active:bg-[#91ca6b]">
-            <Link to="/over-ons">Over Ons</Link>
-          </li>
-          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
-            <Link to="/wijdtematen">Wijdtematen</Link>
-          </li>
-          <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
-            <Link to="/de-schoenzoeker">De Schoenzoeker</Link>
-          </li>
-        </ul>
+          <NavLink
+            to="/"
+            className={(navData) =>
+              navData.isActive
+                ? "font-display p-2 bg-[#91ca6b] rounded"
+                : "hover:bg-[#8fc76a] p-2 rounded"
+            }
+          >
+            Homepage
+          </NavLink>
 
+          <NavLink
+            to="/over-ons"
+            className={(navData) =>
+              navData.isActive
+                ? "font-display p-2 bg-[#91ca6b] rounded"
+                : "hover:bg-[#8fc76a] p-2 rounded"
+            }
+          >
+            Uitleg Schoenzoeker
+          </NavLink>
+
+          <NavLink
+            to="/wijdtematen"
+            className={(navData) =>
+              navData.isActive
+                ? "font-display p-2 bg-[#91ca6b] rounded"
+                : "hover:bg-[#8bd15c] p-2 rounded"
+            }
+          >
+            Wijdtematen
+          </NavLink>
+
+          <NavLink
+            to="/de-schoenzoeker"
+            className={(navData) =>
+              navData.isActive
+                ? "font-display p-2 bg-[#91ca6b] rounded"
+                : "hover:bg-[#8fc76a] p-2 rounded"
+            }
+          >
+            De Schoenzoeker
+          </NavLink>
+        </ul>
         {/* Mobile Navigation Icon (only visible on small screens) */}
         <div onClick={handleNav} className="lg:hidden cursor-pointer">
           {nav ? <AiOutlineClose size={24} /> : <AiOutlineMenu size={24} />}
         </div>
-
         {/* Mobile Navigation Menu */}
         <div
           className={
@@ -63,29 +91,24 @@ const Navbar = () => {
           {/* Mobile Navigation Items */}
           <ul className="flex flex-col space-y-4 p-4">
             <li className="hover:bg-[#91ca6b] p-2 rounded	font-display active:bg-[#91ca6b]">
-              <Link to="/" onClick={handleNav}>
+              <NavLink to="/" onClick={handleNav}>
                 Homepage
-              </Link>
+              </NavLink>
             </li>
             <li className="hover:bg-[#91ca6b] p-2 rounded	font-display active:bg-[#91ca6b]">
-              <Link to="/over-ons" onClick={handleNav}>
+              <NavLink to="/over-ons" onClick={handleNav}>
                 Over Ons
-              </Link>
+              </NavLink>
             </li>
             <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
-              <Link to="/wijdtematen" onClick={handleNav}>
+              <NavLink to="/wijdtematen" onClick={handleNav}>
                 Wijdtematen
-              </Link>
+              </NavLink>
             </li>
             <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
-              <Link to="/schoen-soort" onClick={handleNav}>
-                Schoen soort
-              </Link>
-            </li>
-            <li className="hover:bg-[#91ca6b] p-2 rounded	font-display">
-              <Link to="/de-schoenzoeker" onClick={handleNav}>
+              <NavLink to="/de-schoenzoeker" onClick={handleNav}>
                 De Schoenzoeker
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
