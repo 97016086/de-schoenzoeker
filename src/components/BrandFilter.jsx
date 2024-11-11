@@ -1,38 +1,47 @@
 import React from "react";
 
 const BrandFilter = ({ toggleFilter, brands, setBrands }) => {
+  const shoeBrands = [
+    { value: "ara", label: "Ara" },
+    { value: "christiandietz", label: "Christian Dietz" },
+    { value: "crockett-jones", label: "Crockett	&	Jones" },
+    { value: "durea", label: "Durea" },
+    { value: "florisvanbommel", label: "Floris	van	Bommel" },
+    { value: "footnotes", label: "Footnotes" },
+    { value: "gabor", label: "Gabor" },
+    { value: "hartjes", label: "Hartjes" },
+    { value: "hassia", label: "Hassia" },
+    { value: "magnanni", label: "Magnanni" },
+    { value: "mephisto", label: "Mephisto" },
+    { value: "muoviti", label: "Muoviti" },
+    { value: "piedinudi", label: "Piedi	Nudi" },
+    { value: "rieker", label: "Rieker" },
+    { value: "santoni", label: "Santoni" },
+    { value: "sioux", label: "Sioux" },
+    { value: "solidus", label: "Solidus" },
+    { value: "vanbommel", label: "Van Bommel" },
+    { value: "verschuren", label: "Verschuren" },
+    { value: "waldläufer", label: "Waldläufer" },
+    { value: "xsensible stretchwalker", label: "Ara" },
+    { value: "ara", label: " Xsensible Stretchwalker" },
+  ];
   return (
-    <div className="flex	flex-col">
-      <h3>Merk</h3>
-
-      <label>
-        <input
-          type="checkbox"
-          value="gabor"
-          checked={brands.includes("gabor")}
-          onChange={() => toggleFilter(brands, setBrands, "gabor")}
-        />
-        Gabor
-      </label>
-
-      <label>
-        <input
-          type="checkbox"
-          value="rieker"
-          checked={brands.includes("rieker")}
-          onChange={() => toggleFilter(brands, setBrands, "rieker")}
-        />
-        Rieker
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          value="durea"
-          checked={brands.includes("durea")}
-          onChange={() => toggleFilter(brands, setBrands, "durea")}
-        />
-        Durea
-      </label>
+    <div className=" flex	flex-col mx-8">
+      <h3 className="font-display  text-[#33a4b7] text-base font-semibold pt-4">
+        Merk
+      </h3>
+      {shoeBrands.map((brand) => (
+        <label key={brand.value}>
+          <input
+            type="checkbox"
+            value={brand.value}
+            checked={brands.includes(brand.value)}
+            onChange={() => toggleFilter(brands, setBrands, brand.value)}
+            className="font-display accent-[#33a4b7] 	"
+          />
+          {brand.label}
+        </label>
+      ))}
     </div>
   );
 };
