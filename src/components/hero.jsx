@@ -1,5 +1,5 @@
 import React from "react";
-import shoeImage from "../images/jaclyn-moy-ugZxwLQuZec-unsplash-removebg.png";
+import shoeImage from "../images/jaclyn-moy-ugZxwLQuZec-unsplash-removebg.webp";
 
 const hero = () => {
   return (
@@ -9,12 +9,12 @@ const hero = () => {
           Vind Jouw Passende schoen
         </h1>
       </div>
-      <div className=" lg:block hidden  justify-center">
+      <div className="md:block hidden  justify-center">
         <img
           fetchpriority="high"
           src={shoeImage}
           alt="een afbeelding met verschillende soort schoenen erop."
-          className="w-3/4 lg:max-w-full	h-auto object-contain"
+          className="w-3/4 lg:max-w-full	h-full object-contain m-40"
         />
       </div>
     </section>

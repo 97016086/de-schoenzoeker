@@ -19,7 +19,8 @@ const Navbar = () => {
         <img
           src={Logo}
           alt="de schoenzoeker voor alle andere wijdtematen"
-          className="mt-10 h-40 "
+          fetchpriority="high"
+          className="mt-10 h-40 w-auto"
         />
         {/* Desktop Navigation (hidden on small screens) */}
         <ul className="hidden lg:flex space-x-6">
@@ -84,7 +85,8 @@ const Navbar = () => {
             <img
               src={Logo}
               alt="de schoenzoeker voor alle andere wijdtematen"
-              className="cursor-pointer h-16 "
+              fetchpriority="high"
+              className="w-72 h-72"
             />
           </div>
 

@@ -17,7 +17,6 @@ const ShoeSearch = () => {
   const [widths, setWidths] = useState([]);
   const [colors, setColors] = useState([]);
   const [results, setResults] = useState([]);
-  const [isSent, setIsSent] = useState(false);
 
   const toggleFilter = (filter, setFilter, value) => {
     setFilter((prev) => {
@@ -53,27 +52,26 @@ const ShoeSearch = () => {
   };
 
   return (
-    <div>
+    <>
       <Navbar />
-      <div className="	bg-[#fafcf8] flex min-h-screen">
+      <div className="	bg-[#f3f7f0] flex min-h-screen">
         <div className="min-w-56 md:min-w-72 lg:min-w-96 bg-[#91ca6b] max-h-full overflow-auto ">
-          <div className="relative py-2 ">
+          <div className="relative z-0	w-full	md:w-auto">
             <input
               type="text"
               placeholder="zoeken"
-              className="bg-[#46762675] rounded text-white outline-none   px-1 m-4 md:mx-8"
+              className="bg-[#46762675] rounded text-white outline-none	px-4 py-2	pr-10 m-4 md:mx-8"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
                   handleSearch();
-                  setIsSent(true);
                 }
               }}
             ></input>
             <IoIosSearch
               onClick={handleSearch}
-              className="absolute left-2 top-7 	mx-44  md:mx-48 cursor-pointer text-white"
+              className="absolute min-[320px]:left-52	left-7 md:right-9 top-7 lg:left-10  md:mx-48 cursor-pointer text-white"
             />
           </div>
 
@@ -110,16 +108,11 @@ const ShoeSearch = () => {
           </button>
         </div>
         <div className="flex flex-col">
-          <p className="font-display">
-            <span className="font-semibold font-display px-1">Let op!</span>
-            Niet alle merken die weergegeven worden op deze website hebben alle
-            wijdtematen.
-          </p>
           <ShoeResults shoes={results} />
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ module.exports = {
 		fontFamily: {
 			display: ["Poppins", "sans-serif"],
 		},
+
 		extend: {
 			lineHeight: {
 				'leading-2': '.25rem'
