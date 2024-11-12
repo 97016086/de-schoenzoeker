@@ -53,14 +53,16 @@ const ShoeSearch = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="	bg-[#f3f7f0] flex min-h-screen">
+      <div>
+        <Navbar />
+      </div>
+      <div className="bg-[#f3f7f0] flex min-h-screen">
         <div className="min-w-56 md:min-w-72 lg:min-w-96 bg-[#91ca6b] max-h-full overflow-auto ">
-          <div className="relative z-0	w-full	md:w-auto">
+          <div className="relative z-0	max-w-48	md:w-auto">
             <input
               type="text"
               placeholder="zoeken"
-              className="bg-[#46762675] rounded text-white outline-none	px-4 py-2	pr-10 m-4 md:mx-8"
+              className="bg-[#46762675] max-w-52 md:w-full rounded text-white outline-none	px-4 py-2	pr-10 m-4 md:mx-8"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={(e) => {
