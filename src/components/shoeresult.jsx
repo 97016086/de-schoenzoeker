@@ -34,7 +34,7 @@ const ShoeResults = ({ shoes }) => {
               />
             ) : (
               <div className="w-full	h-32	bg-gray-200	flex	items-center	justify-center	">
-                <span className="text-gray-500	text-sm">Geen Afbeeldingen</span>
+                <span className="text-gray-500	text-sm">Geen Afbeelding</span>
               </div>
             )}
             <h3 className="max-w-32 ml-4">{shoe.title}</h3>
