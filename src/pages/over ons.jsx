@@ -28,7 +28,9 @@ function OverOns() {
             <p className="mb-4">
               De schoenzoeker is een gedeelte van de website waar u
               verschillende merken, maten, wijdtematen kunt zoeken en daar dan
-              weer schoenen uit terug krijgt. u kunt
+              weer schoenen uit terug krijgt. Het belangrijke hierin is wel dat
+              niet alle merken die erstaan ook over alle wijdtematen beschikken.
+              u kunt
               <a className="underline px-2" href="/de-schoenzoeker">
                 hier
               </a>
